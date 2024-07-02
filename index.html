@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pricing Table</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        inter: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body class="relative font-inter antialiased">
+
+<script src="https://www.paypal.com/sdk/js?client-id=AYEbuGDK0V8fAwXWgvfyMZgK1FFBG_feJEUvcmzSRUOV9X6LArY38LBmp37xyIImXh8a23X_reiVKDOy&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+
+    <main class="relative min-h-screen flex flex-col justify-center bg-slate-50 overflow-hidden">
+        <div class="w-full max-w-6xl mx-auto px-4 md:px-6 py-24">
+        <div class="p-6 mb-10 flex justify-center items-center">
+        	<span style="font-family:mulish, inter" class="text-slate-900 dark:text-slate-200 font-semibold text-3xl">Choose a Plan</span>
+        </div>
+
+            <!-- Pricing table component -->
+            <div x-data="{ isAnnual: false }">
+            
+                <!-- Pricing toggle -->
+                <div class="flex justify-center max-w-[14rem] m-auto mb-8 lg:mb-16">
+                    <div class="relative flex w-full p-1 bg-white dark:bg-slate-900 rounded-full">
+                        <span class="absolute inset-0 m-1 pointer-events-none" aria-hidden="true">
+                            <span class="absolute inset-0 w-1/2 bg-[#588157] rounded-full shadow-sm shadow-indigo-950/10 transform transition-transform duration-150 ease-in-out" :class="isAnnual ? 'translate-x-0' : 'translate-x-full'"></span>
+                        </span>
+                        <button onclick="showYearly()" class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-white' : 'text-slate-500 dark:text-slate-400'" @click="isAnnual = true" :aria-pressed="isAnnual">Yearly<span :class="isAnnual ? 'text-indigo-200' : 'text-slate-400 dark:text-slate-500'"> -17%</span></button>
+                        <button onclick="showMonthly()" class="relative flex-1 text-sm font-medium h-8 rounded-full focus-visible:outline-none focus-visible:ring focus-visible:ring-indigo-300 dark:focus-visible:ring-slate-600 transition-colors duration-150 ease-in-out" :class="isAnnual ? 'text-slate-500 dark:text-slate-400' : 'text-white'" @click="isAnnual = false" :aria-pressed="isAnnual">Monthly</button>
+                    </div>
+                </div>
+            
+                <div class="max-w-sm mx-auto grid gap-6 lg:grid-cols-2 lg:max-w-none">
+            
+                    <!-- Pricing tab 1 -->
+                    <div class="h-full flex justify-center lg:justify-end">                                
+                        <div class="relative flex flex-col h-full max-w-xs p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-900 shadow shadow-slate-950/5">
+                            <div class="mb-5">
+                            	<div class="pb-4">
+                                	<img class="rounded" src="https://media1-production-mightynetworks.imgix.net/asset/c1d7e08e-b953-4b17-b53c-e32a3cd64bc0/Logo___Name.png?ixlib=rails-4.2.0&fm=jpg&q=75&auto=format&w=1200&h=675&fit=crop">
+                                </div>
+                                <div class="text-slate-900 dark:text-slate-200 font-semibold mb-1">MEOWTOWN with Julia & Joff</div>
+                                <div class="inline-flex items-baseline mb-2">
+                                    <span class="text-slate-900 dark:text-slate-200 font-bold text-3xl">$</span>
+                                    <span class="text-slate-900 dark:text-slate-200 font-bold text-4xl" x-text="isAnnual ? '107' : '11'"></span>
+                                    <span class="text-slate-500 font-medium" x-text="isAnnual ? '/yr' : '/mo'"></span>
+                                </div>
+                                <div class="text-sm text-slate-500 mb-5">Become a citizen. Save a cat.
+ 
+ 
+</div>
+                                
+                                <div id="paypal-button-container-P-1P924678NB421654PM2AUXLI" style="display:none"></div>
+                                <script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'horizontal',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-1P924678NB421654PM2AUXLI'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-1P924678NB421654PM2AUXLI'); // Renders the PayPal button
+</script>
+                                
+                               
+                               
+                                <div id="paypal-button-container-P-7XL72089XG318362RM2AUVAY" style="display:flex"></div>
+                                <script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'horizontal',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-7XL72089XG318362RM2AUVAY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-7XL72089XG318362RM2AUVAY'); // Renders the PayPal button
+</script>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pricing tab 2 -->
+                    <div class="h-full flex justify-center lg:justify-start">
+                        <div class="relative flex flex-col h-full max-w-xs p-6 rounded-2xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-900 shadow shadow-slate-950/5" >
+                           
+                            <div class="mb-5">
+                            	<div class="pb-4">
+                                	<img class="rounded" src="https://media1-production-mightynetworks.imgix.net/asset/c1d7e08e-b953-4b17-b53c-e32a3cd64bc0/Logo___Name.png?ixlib=rails-4.2.0&fm=jpg&q=75&auto=format&w=1200&h=675&fit=crop">
+                                </div>
+                                <div class="text-slate-900 dark:text-slate-200 font-semibold mb-1">TOTAL PAWESOMENESS</div>
+                                <div class="inline-flex items-baseline mb-2">
+                                    <span class="text-slate-900 dark:text-slate-200 font-bold text-3xl">$</span>
+                                    <span class="text-slate-900 dark:text-slate-200 font-bold text-4xl" x-text="isAnnual ? '213' : '22'"></span>
+                                    <span class="text-slate-500 font-medium" x-text="isAnnual ? '/yr' : '/mo'"></span>
+                                </div>
+                                <div class="text-sm text-slate-500 mb-5">Both plans are the same, but your extra support will help us further our mission of helping homeless cats.</div>
+                                
+                                <div id="paypal-button-container-P-4KJ84660JP018435PM2AUX5A" style="display:none"></div>
+                                <script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'horizontal',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-4KJ84660JP018435PM2AUX5A'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-4KJ84660JP018435PM2AUX5A'); // Renders the PayPal button
+</script>
+                                
+                               
+                                
+                                <div id="paypal-button-container-P-9BU04385HU353880VM2AUWPY" style="display:flex"></div>
+                               <script>
+  paypal.Buttons({
+      style: {
+          shape: 'rect',
+          color: 'gold',
+          layout: 'horizontal',
+          label: 'paypal'
+      },
+      createSubscription: function(data, actions) {
+        return actions.subscription.create({
+          /* Creates the subscription */
+          plan_id: 'P-9BU04385HU353880VM2AUWPY'
+        });
+      },
+      onApprove: function(data, actions) {
+        alert(data.subscriptionID); // You can add optional success message for the subscriber here
+      }
+  }).render('#paypal-button-container-P-9BU04385HU353880VM2AUWPY'); // Renders the PayPal button
+</script>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                
+                   
+            <!-- End: Pricing table component -->
+
+        </div>
+    </main>
+
+    <!-- Page footer -->
+    <footer class="absolute left-6 right-6 md:left-12 md:right-auto bottom-4 md:bottom-8 text-center md:text-left">
+        <a class="text-xs text-slate-500 hover:underline" href="https://meowtown.mn.co">&copy;Meowtown by @thesofastrays</a>
+    </footer>
+
+<script> 
+    function showYearly() {
+    	var x = document.getElementById("paypal-button-container-P-1P924678NB421654PM2AUXLI");
+        var y = document.getElementById("paypal-button-container-P-7XL72089XG318362RM2AUVAY");
+        var z = document.getElementById("paypal-button-container-P-4KJ84660JP018435PM2AUX5A");
+        var v = document.getElementById("paypal-button-container-P-9BU04385HU353880VM2AUWPY");
+        x.style.display = "flex";
+        y.style.display = "none";
+        z.style.display = "flex";
+        v.style.display = "none";
+    }
+    
+    function showMonthly() {
+    	var x = document.getElementById("paypal-button-container-P-1P924678NB421654PM2AUXLI");
+        var y = document.getElementById("paypal-button-container-P-7XL72089XG318362RM2AUVAY");
+        var z = document.getElementById("paypal-button-container-P-4KJ84660JP018435PM2AUX5A");
+        var v = document.getElementById("paypal-button-container-P-9BU04385HU353880VM2AUWPY");
+        x.style.display = "none";
+        y.style.display = "flex";
+        z.style.display = "none";
+        v.style.display = "flex";
+    }
+</script>
+
+</body>
+
+</html>
